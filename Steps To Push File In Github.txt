@@ -1,0 +1,14 @@
+git init
+git status
+git branch
+git branch -M main
+git remote add origin <link>
+git remote -v
+git remote set-url origin https://<token>@github.com/username/repositoryName
+
+git add filename OR .
+git commit -m "msg"
+git push origin main
+git fetch origin main:tmp
+git rebase tmp
+git push origin main
