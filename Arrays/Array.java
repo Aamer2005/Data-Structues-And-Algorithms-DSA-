@@ -121,7 +121,7 @@ class Element{
         array[index2] = largest;
     }
 
-    public static void bubbleSort(int[] array)
+    public static int[] bubbleSort(int[] array)
     {
         int temp;
         for(int i=0;i<array.length;i++)
@@ -139,4 +139,26 @@ class Element{
 
         return array;
     }
+
+    public static int[] selectionSort(int[] array)
+    {
+        int minIndex,temp=0;
+        int size = array.length;
+        for(int i=0;i<array.length;i++)
+        {
+            minIndex = i;
+            for(int j = i;j<=size-1;j++)
+            {
+                if(array[j]<array[minIndex])
+                {
+                    minIndex = j;
+                }
+            }
+            temp = array[minIndex];
+            array[minIndex] = array[i];
+            array[i]=temp;
+        }
+
+        return array;
+    } 
 }
