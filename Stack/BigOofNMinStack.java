@@ -1,4 +1,4 @@
-MinStack {
+class MinStack {
 
     private int top=-1;
     private int size=10;
