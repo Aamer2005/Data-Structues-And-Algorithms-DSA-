@@ -106,4 +106,34 @@ class BitManuplation{
             return result;
         }
     }
+
+    public boolean checkIBitSetOrNotUsingBitOperators(int number , int bit)
+    {
+        
+        if((number&(1<<bit))!=0)
+        return true;
+        else 
+        return false;
+
+        //method 2
+
+        // if((1&(number>>bit))!=0)
+        // return true;
+        // else 
+        // return false;
+    }
+
+    public int setBit(int number , int bit)
+    {
+       // return (number^(1<<bit));
+
+       return (number|(1<<bit));
+    }
+
+    public int clearBit(int number , int bit)
+    {
+        return (number&(~(1<<bit)));
+    }
 }
+
+
