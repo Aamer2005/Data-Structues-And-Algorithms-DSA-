@@ -76,4 +76,34 @@ class BitManuplation{
 
         return result;
     }
+
+    public void swapWithoutTemp(int a , int b)
+    {
+        a = a ^ b;
+        b = a ^ b ; //(a^b) ^ b -> a because b ^ b = 0
+        a = a^b ; //(a^b) ^ b -> b because b = a now
+
+        System.out.println(a + "\n" + b);
+    }
+
+    public boolean checkIBitSetOrNot(int number , int bit)
+    {
+        String str = Integer.toBinaryString(number);
+        boolean result = true ;
+
+        try{
+        if(str.charAt(bit)=='1')
+        result = true;
+        else
+        result = false;
+        }
+        catch(StringIndexOutOfBoundsException e)
+        {
+            result = false;
+        }
+
+        finally{
+            return result;
+        }
+    }
 }
