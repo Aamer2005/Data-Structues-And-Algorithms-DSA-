@@ -180,3 +180,23 @@ class Element{
         return array;
     }
 }
+
+class Solution {
+    public int secondLargestElement(int[] nums) {
+        int largest = -1,secondLargestElement=-1;
+    int count=0;
+        for(int i : nums)
+        {
+          
+            if(i>largest)
+            {
+            count =(int)largest;
+            largest = i;
+            }
+ 
+            secondLargestElement = count;
+        }
+
+      return secondLargestElement;
+    }
+}
