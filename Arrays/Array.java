@@ -181,22 +181,32 @@ class Element{
     }
 }
 
-class Solution {
-    public int secondLargestElement(int[] nums) {
-        int largest = -1,secondLargestElement=-1;
+public int secondLargestElement(int[] nums) {
+    int largest = -1,secondLargestElement=-1;
     int count=0;
-        for(int i : nums)
-        {
-          
-            if(i>largest)
+            for(int i : nums)
             {
-            count =(int)largest;
-            largest = i;
+            
+                if(i>largest)
+                {
+                count =(int)largest;
+                largest = i;
+                }
+    
+                secondLargestElement = count;
             }
- 
-            secondLargestElement = count;
+
+    return secondLargestElement;
+    }
+
+    
+public boolean isSorted(Integer[] nums) {
+
+        for (int i = 0 ; i<nums.length-1;i++)
+        {
+               if(nums[i]>nums[i+1])
+                return false;
         }
 
-      return secondLargestElement;
-    }
+            return true;
 }
