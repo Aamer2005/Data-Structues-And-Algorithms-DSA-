@@ -222,5 +222,21 @@ public boolean isSorted(Integer[] nums) {
         
         nums[nums.length-1] = temp;
 
+    }
+
+    public void rotateArrayLeftByK(int[] nums, int k) {
         
+        for(int j=1;j<=k;j++)
+        {
+        int temp = nums[0];
+
+        for(int i=0;i<nums.length-1;i++)
+        {
+                nums[i] = nums[i+1];
+        }
+        
+        nums[nums.length-1] = temp;
+
+        
+        }
     }
