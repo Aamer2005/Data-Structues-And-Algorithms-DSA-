@@ -1,6 +1,7 @@
 class Hash{
 
-int[] Hashnumber = new int[1000000];
+int[] Hashnumber = new int[1000001];
+int[] Hashchar = new int[26];
 
 public void HashingFunctionNumber(int[] array)
 {
@@ -11,12 +12,24 @@ public void HashingFunctionNumber(int[] array)
 
 public void HashingFunctionChar(String str)
 {
-    
+    char c = ' ';
+
+        for(int i=0;i<str.length();i++)
+        {
+            c = str.charAt(i);
+
+            Hashchar[c-65] +=1;
+        }
 } 
 
-public int getHashValue(int key){
+public int getHashValue(int key ){
 
         return Hashnumber[key];
+}
+
+public int getHashValue(char c)
+{
+        return Hashchar[c-65];
 }
 
 public static void main(String[] args)
@@ -27,9 +40,13 @@ public static void main(String[] args)
 
     System.out.println(h.getHashValue(1));
     System.out.println(h.getHashValue(4));
-
     System.out.println(h.getHashValue(7));
 
+    String str = "HELLOWORLD";
+    h.HashingFunctionChar(str);
+    System.out.println(h.getHashValue('H'));
+    System.out.println(h.getHashValue('L'));
+    System.out.println(h.getHashValue('O'));
 }
 
 }
