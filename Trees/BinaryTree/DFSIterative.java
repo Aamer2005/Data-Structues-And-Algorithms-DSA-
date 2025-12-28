@@ -14,7 +14,7 @@
  * }
  */
 
-class Solution {
+class Solution1 {
 
     public List<Integer> preorderTraversal(TreeNode root)
     {
@@ -45,4 +45,40 @@ class Solution {
     }
 
 
+}
+
+
+class Solution2 {
+//PostOrder Using 2 Stack
+    public List<Integer> postorderTraversal(TreeNode root) {
+
+        Stack<TreeNode> s1 = new Stack<>();
+        Stack<TreeNode> s2 = new Stack<>();
+
+        if(root!=null)
+        s1.push(root);
+
+        TreeNode node ;
+
+        while(!s1.isEmpty())
+        {
+            node = s1.peek();
+
+            s2.push(s1.pop());
+
+            if(node.left!=null)
+            s1.push(node.left);
+
+            if(node.right!=null)
+            s1.push(node.right);
+        }
+
+        List<Integer> al = new ArrayList<>();
+        while(!s2.isEmpty())
+        {
+            al.add(s2.pop().val);
+        }
+
+        return al;
+    }
 }
