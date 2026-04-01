@@ -43,10 +43,27 @@ class Solution{
             System.out.println();
         }
     }
+    public static void abcd(int size)
+    {
+        char alpha = 'a';
+
+        for(int line=1;line<=size;line++)
+        {
+            alpha = 'a';
+
+            for(int symbol = 0;symbol<line;symbol++)
+            {
+                System.out.print((char)(alpha+symbol));
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args)
     {
         // allOnes(4);
-        one234(4);
-        numbers(4);
+        // one234(4);
+        // numbers(4);
+
+        abcd(4);
     }
 }
