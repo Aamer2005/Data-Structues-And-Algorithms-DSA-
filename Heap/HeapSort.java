@@ -27,7 +27,21 @@ class HeapSort{
             Heapify(arr,i,heapsize);
         }
     }
-    
+    public void HeapSort(int[] arr){
+
+        int heapsize = arr.length-1;
+
+        //building Heap
+        buildHeap(arr , heapsize);
+
+        //sort the array (heap elements)
+        for(int i=heapsize;i>=2;i--){
+            
+            swap(arr , i,1);
+            heapsize--;
+            Heapify(arr,1,heapsize);
+        }
+    }
 
     private void swap(int[] arr , int i , int j){
 
@@ -44,7 +58,7 @@ class Solution{
         HeapSort h = new HeapSort();
 
         int[] arr = {-1,1,3,2,4,5,3,7,6};
-        h.buildHeap(arr,arr.length-1);
+        h.HeapSort(arr);
 
         System.out.println(Arrays.toString(arr));
     }
