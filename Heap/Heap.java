@@ -29,6 +29,38 @@ class Heap{
         }
     }
 
+    void delete()
+    {
+
+        if(size==0)return ;
+
+        arr[1] = arr[size];
+        arr[size] = 0;
+        size--;
+        
+
+        int parent = 1;
+
+        while(parent<size)
+        {
+            int left = 2*parent;
+            int right = 2*parent+1;
+
+            if(left<=size && arr[parent]<arr[left]){
+                swap(arr,left,parent);
+                parent = left;
+            }
+            else if(right<=size && arr[parent]<arr[right]){
+                swap(arr,right,parent);
+                parent = right;
+            }
+            else{
+                return ;
+            }
+            System.out.println(parent);
+
+        }
+    }
 
     void swap(int[] arr,int i , int j)
     {
@@ -50,6 +82,7 @@ class Heap{
         h.insert(70);
         h.insert(10);
         h.insert(5);
+        h.delete();
 
         h.print();
     }
