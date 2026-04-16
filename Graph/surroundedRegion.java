@@ -1,3 +1,5 @@
+//we can also do this question without visited array using only board 
+// all modification on board , instead of visited cell is true set board cell as #
 class Solution {
     public void solve(char[][] board) {
 
