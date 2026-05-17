@@ -9,6 +9,7 @@ Output: 3
 Explanation: The answer is "abc", with the length of 3. Note that "bca" and "cab" are also correct answers.
 **/
 
+
 class Solution {
     public int lengthOfLongestSubstring(String s) {
         int max=0 , len = 0 , l  = 0  , r= 0;
